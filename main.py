@@ -15,7 +15,7 @@ class UserUpdate(BaseModel):
 class UserResponse(UserCreate):
     id:UUID
 @app.post("/users/",response_model=UserResponse,status_code=201) #user POST
-def create_user(user:UserCreate):
+def create_user(user:UserCreate):`
     user_id=uuid4()
     new_user={"id":user_id,"name":user.name,"email":user.email,"age":user.age}
     users_db[user_id]=new_user
